@@ -1,0 +1,6 @@
+.git
+Dockerfile
+.dockerignore
+.agent
+.gemini
+node_modules
