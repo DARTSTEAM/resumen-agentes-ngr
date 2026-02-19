@@ -232,3 +232,64 @@ tr:hover {
         padding: 0.8rem;
     }
 }
+
+.footnote {
+    margin: -1.5rem 0 3rem 1rem;
+    font-size: 0.85rem;
+    color: #888;
+    font-style: italic;
+}
+
+.promo-section {
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.promo-card {
+    background: linear-gradient(135deg, #7E6E94 0%, #4a4059 100%);
+    color: white;
+    padding: 2.5rem;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(126, 110, 148, 0.2);
+}
+
+.promo-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.promo-badge {
+    background: var(--accent-yellow);
+    color: #1a1a1a;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+.promo-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.promo-card p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+}
+
+.promo-card strong {
+    color: var(--accent-yellow);
+    font-weight: 800;
+}
