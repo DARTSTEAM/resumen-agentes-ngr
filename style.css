@@ -293,3 +293,42 @@ tr:hover {
     color: var(--accent-yellow);
     font-weight: 800;
 }
+
+/* Privacy toggle button */
+.header-info {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+#privacy-toggle {
+    background: rgba(126, 110, 148, 0.1);
+    border: 1px solid rgba(126, 110, 148, 0.25);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    flex-shrink: 0;
+}
+
+#privacy-toggle:hover {
+    background: rgba(126, 110, 148, 0.2);
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(126, 110, 148, 0.2);
+}
+
+#privacy-toggle:active {
+    transform: scale(0.95);
+}
+
+.price-cell {
+    font-weight: 600;
+    transition: opacity 0.25s ease;
+    letter-spacing: 0.02em;
+}

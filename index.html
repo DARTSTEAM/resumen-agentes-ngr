@@ -26,6 +26,9 @@
                 <span class="hike-gradient-text"
                     style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; white-space: nowrap;">Propuesta
                     Comercial</span>
+                <button id="privacy-toggle" title="Ocultar/mostrar cotizaciones" onclick="togglePrivacy()">
+                    <span id="privacy-icon">👁️</span>
+                </button>
             </div>
         </header>
 
@@ -48,7 +51,7 @@
                             <td><span class="priority-badge priority-0">0</span></td>
                             <td><strong>Control de Gastos y Presupuesto de Marketing</strong></td>
                             <td>-</td>
-                            <td>USD 0</td>
+                            <td class="price-cell" data-price="USD 0">USD 0</td>
                             <td><a href="https://abndigital.notion.site/Agente-de-Control-de-Gastos-y-Presupuesto-de-Marketing-NGR-2fc432d5218280d5bb6eed3d18a035e6?source=copy_link"
                                     target="_blank" class="link-btn">Ver propuesta completa ↗</a></td>
                         </tr>
@@ -56,7 +59,7 @@
                             <td><span class="priority-badge priority-1">1</span></td>
                             <td><strong>Automatización de Cálculo de Shares de Mercado</strong></td>
                             <td>7 semanas</td>
-                            <td>USD 12.000</td>
+                            <td class="price-cell" data-price="USD 12.000">USD 12.000</td>
                             <td><a href="https://abndigital.notion.site/Automatizaci-n-de-C-lculo-de-Shares-de-Mercado-NGR-2fc432d52182800e9b8cc901be53eb49?source=copy_link"
                                     target="_blank" class="link-btn">Ver propuesta completa ↗</a></td>
                         </tr>
@@ -64,7 +67,7 @@
                             <td><span class="priority-badge priority-2">2</span></td>
                             <td><strong>Automatización de Monitoreo de Tiempos de Reparto y Conectividad</strong></td>
                             <td>4 semanas</td>
-                            <td>USD 4.000</td>
+                            <td class="price-cell" data-price="USD 4.000">USD 4.000</td>
                             <td><a href="https://abndigital.notion.site/Automatizaci-n-de-Monitoreo-de-Tiempos-de-Reparto-y-Conectividad-NGR-2fc432d5218280cd8507f76818271e24?source=copy_link"
                                     target="_blank" class="link-btn">Ver propuesta completa ↗</a></td>
                         </tr>
@@ -72,7 +75,7 @@
                             <td><span class="priority-badge priority-2">2</span></td>
                             <td><strong>Monitoreo de Precios de la Competencia</strong></td>
                             <td>8 semanas</td>
-                            <td>USD 8.000 - 16.000 **</td>
+                            <td class="price-cell" data-price="USD 8.000 - 16.000 **">USD 8.000 - 16.000 **</td>
                             <td><a href="https://abndigital.notion.site/Monitoreo-de-Precios-de-la-Competencia-NGR-2fc432d521828001af18ec12cf608261?source=copy_link"
                                     target="_blank" class="link-btn">Ver propuesta completa ↗</a></td>
                         </tr>
@@ -80,7 +83,7 @@
                             <td><span class="priority-badge priority-2">2</span></td>
                             <td><strong>Centralización y Explotación de Datos de Alianzas</strong></td>
                             <td>8 semanas</td>
-                            <td>USD 8.000 - 18.000 **</td>
+                            <td class="price-cell" data-price="USD 8.000 - 18.000 **">USD 8.000 - 18.000 **</td>
                             <td><a href="https://abndigital.notion.site/Centralizaci-n-y-Explotaci-n-de-Datos-de-Alianzas-NGR-2fc432d52182800bbfdee826ebad5515?source=copy_link"
                                     target="_blank" class="link-btn">Ver propuesta completa ↗</a></td>
                         </tr>
@@ -89,7 +92,7 @@
                             <td><strong>Automatización de Contacto, Calificación y Scoring de UGCs /
                                     Influencers</strong></td>
                             <td>7 semanas</td>
-                            <td>USD 12.000</td>
+                            <td class="price-cell" data-price="USD 12.000">USD 12.000</td>
                             <td><a href="https://abndigital.notion.site/Automatizaci-n-de-Contacto-Calificaci-n-y-Scoring-de-UGCs-Influencers-NGR-2fc432d5218280269912c81d8669dd59?source=copy_link"
                                     target="_blank" class="link-btn">Ver propuesta completa ↗</a></td>
                         </tr>
@@ -131,6 +134,22 @@
                 }, 100);
             }
         });
+
+        // Privacy toggle for pricing
+        let pricesHidden = false;
+        function togglePrivacy() {
+            pricesHidden = !pricesHidden;
+            const cells = document.querySelectorAll('.price-cell');
+            const icon = document.getElementById('privacy-icon');
+            cells.forEach(cell => {
+                if (pricesHidden) {
+                    cell.textContent = '••••••';
+                } else {
+                    cell.textContent = cell.dataset.price;
+                }
+            });
+            icon.textContent = pricesHidden ? '🙈' : '👁️';
+        }
     </script>
 </body>
 
